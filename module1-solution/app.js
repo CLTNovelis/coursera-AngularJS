@@ -17,7 +17,7 @@
             var strLen = countValidItems($scope.lunchList);
 
             // set the reply based on number of valid items
-            $scope.lunchAlert = strLen;
+            // $scope.lunchAlert = strLen;
             $scope.lunchMessage = (strLen <= 0 ? 'Please enter at least one food item' : (strLen <= 3 ? 'Enjoy!' : 'Too much!'));
 
             // set the form colors based on number of valid items
