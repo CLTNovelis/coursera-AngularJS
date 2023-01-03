@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+        .message {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+            border-color: green;
+        }
+        .fail {
+            color: red;
+            border-color: red;
+        }
+    </style>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="LunchCheck">
+    <div class="container p-1" ng-controller="LunchCheckController">
+        <div class="card">
+            <div class="card-header">Lunch Checker</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input id="lunch-menu" type="text"
+                           placeholder="list (comma separated) the dishes you usually have for lunch"
+                           class="form-control"
+                           ng-model="lunchList"
+                           ng-style="lunchListItems">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary pr-2" ng-click="checkLunchList()">Check if too Much</button>
+                    <div class="d-inline" ng-model="lunchAlert">{{lunchAlert}}</div>
+                </div>
+            </div>
+            <div class="card-footer text-center" ng-style="lunchListMessage">
+                {{lunchMessage}}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
