@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <style>
+        .emptyMessage {
+            font-weight: bold;
+            color: red;
+            font-size: 1.2em;
+        }
+
+        li {
+            margin-bottom: 7px;
+            font-size: 1.2em;
+        }
+
+            li > button {
+                margin-left: 6px;
+            }
+        /*button > span {
+          color: green;
+        }*/
+    </style>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+  <body ng-app="ShoppingListCheckOff">
+      <div class="container p-1" >
+          <div class="card">
+              <div class="card-header">Shopping List Check Off</div>
+              <div class="card-body">
+                <div class="row" ng-controller="ToBuyController as ToBuy">
+                    <div class="col">
+                        <div class="h5">To Buy:</div>
+                        <ul>
+                            <li ng-repeat="item in ToBuy.items">
+                                {{ item.quantity }} of {{ item.name }}
+                                <button class="btn btn-sm btn-outline-success" ng-click="ToBuy.removeItem($index, item.quantity, item.name);"><i class="fa fa-check"></i> Bought</button>
+                            </li>
+                        </ul>
+                        <div class="emptyMessage" ng-if="ToBuy.items.length <= 0">{{ToBuy.message}}</div>
+                    </div>
+                </div>
+                  <div class="row">
+                      <div class="col"><hr />
+                      </div>
+                  </div>
+                  <div class="row" ng-controller="AlreadyBoughtController as Bought">
+                      <div class="col">
+                          <div class="h5">Already Bought: {{Bought.numberOfItems}}</div>
+                          <ul>
+                              <li ng-repeat="item in Bought.items">
+                                  {{ item.quantity }} of {{ item.name }}
+                              </li>
+                          </ul>
+                          <div class="emptyMessage" ng-if="Bought.items.length <= 0">{{Bought.message}}</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="card-footer text-center">
+              </div>
+          </div>
+      </div>
+  </body>
+</html>
