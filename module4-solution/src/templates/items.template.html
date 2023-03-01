@@ -1,0 +1,36 @@
+<!--<a ui-sref="home">Home</a> &lt; <a ui-sref="categories">Menu Categories</a> &lt; <span>{{ items.category }}</span>-->
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a ui-sref="home">Home</a></li>
+        <li class="breadcrumb-item"><a ui-sref="categories">Menu Categories</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ items.category }}</li>
+    </ol>
+</nav>
+
+
+<!--<h3>({{ items.short_name }}) {{ items.category }}</h3>
+{{ items.special_instructions }}
+
+<ul>
+    <li ng-repeat="item in items.menu_items">
+        {{ item.description }}
+    </li>
+</ul>-->
+
+<div class="card text-white bg-primary mb-3" >
+    <div class="card-header">({{ items.short_name }}) {{ items.category }}</div>
+    <div class="card-body">
+        <h6 class="card-title">{{ items.special_instructions }}</h6>
+        <div class="card-text text-white">
+            <ul>
+                <li class="text-white" ng-repeat="item in items.menu_items">
+                    {{ item.description }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,20 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a ui-sref="home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Menu Categories</li>
+    </ol>
+</nav>
+
+<div class="card text-white bg-primary mb-3" style="max-width: 30rem;">
+    <div class="card-header">Menu Categories</div>
+    <div class="card-body">
+        <!--<h5 class="card-title">Primary Panel title</h5>-->
+        <div class="card-text text-white">
+            <ul>
+                <li ng-repeat="item in categories.items">
+                    <a class="text-white" ui-sref="items({short_name:{{'item.short_name'}}})">({{ item.short_name }}) {{ item.name }} </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
