@@ -1,0 +1,30 @@
+﻿<div class="row">
+    <div class="col-12">
+        <h3>Title: {{ found.myTitle }}</h3>
+        {{ found.searchTerm }}
+    </div>
+</div>
+
+<div class="row p-1" ng-repeat="item in found.foundItems">
+    <div class="col-4">
+        {{ item.name }} ({{item.short_name}})
+    </div>
+    <div class="col-6">
+        {{ item.description }}
+    </div>
+    <div class="col-2">
+        <button class="btn btn-sm btn-outline-danger" ng-click="found.removeItem({index: $index});">Don't want this one!</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center">
+        <div ng-hide="!found.errorMessage" class="text-danger">{{found.errorMessage}}</div>
+    </div>
+</div>
+
+<!--<ol>
+    <li ng-repeat="item in found.foundItems">
+        {{ item.description }}
+        <button ng-click="found.removeItem({index: $index});">Don't want this one!</button>
+    </li>
+</ol>-->

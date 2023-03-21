@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="angular.min.js"></script>
+    <script src="app-save.js"></script>
+</head>
+<body ng-app="NarrowItDownApp">
+    <div class="container p-1">
+        <div class="card" ng-controller="NarrowItDownController as found">
+            <div class="col-12 card-header">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="h5">
+                            Narrow Down Your Chinese Menu Choice
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 form-group">
+                        <!-- ng-change="found.showterm()" -->
+                        <input type="text" class="float-right form-control" placeholder="search term" ng-model="found.searchTerm" >
+                    </div>
+                    <div class="col-6 form-group">
+                        <button type="button" class="btn btn-sm btn-primary" ng-click="found.searchBtn();" id="btnSearch">Narrow It Down For Me!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <!--<div class="row p-1" ng-repeat="item in found.foundItems">
+        <div class="col-4">
+            {{ item.name }} ({{item.short_name}})
+        </div>
+        <div class="col-6">
+            {{ item.description }}
+        </div>
+        <div class="col-2">
+            <button class="btn btn-sm btn-outline-danger" ng-click="found.removeItem({index: $index});">Don't want this one!</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <div ng-hide="!found.errorMessage" class="text-danger">{{found.errorMessage}}</div>
+        </div>
+    </div>-->
+                <found-items items="found.items"
+                             search-term="found.searchTerm"
+                             search-btn="found.searchBtn()"></found-items>
+
+                <!--<shopping-list items="list.items"
+                               title="{{list.title}}"
+                               bad-remove="list.removeItem"
+                               on-remove="list.removeItem(index)"></shopping-list>-->
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

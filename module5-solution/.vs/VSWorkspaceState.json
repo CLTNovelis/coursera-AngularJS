@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "\\images",
+    "\\images\\menu",
+    "\\images\\menu\\A",
+    "\\src",
+    "\\src\\common",
+    "\\src\\common\\loading",
+    "\\src\\public",
+    "\\src\\public\\menu-item",
+    "\\src\\public\\myinfo",
+    "\\src\\public\\signup"
+  ],
+  "PreviewInSolutionExplorer": false
+}

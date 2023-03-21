@@ -1,0 +1,31 @@
+﻿<div class="container">
+    <div ng-if="myinfoCtrl.info">
+        Firstname: {{myinfoCtrl.user.firstname}} <br />
+        Lastname: {{myinfoCtrl.user.lastname}} <br />
+        Email: {{myinfoCtrl.user.email}} <br />
+        Phone: {{myinfoCtrl.user.phone}} <br />
+        Favorite: 
+        <div class="menu-item-tile">
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="menu-item-photo">
+                        <div>{{myinfoCtrl.favoriteData.short_name}}</div>
+                        <img class="img-responsive" width="250" height="150" ng-src="images/menu/{{myinfoCtrl.short_name}}/{{myinfoCtrl.user.favorite}}.jpg" alt="{{myinfoCtrl.favoriteData.name}}">
+                    </div>
+                    <div class="menu-item-price">{{myinfoCtrl.favoriteData.price_small | currency}}<span> {{myinfoCtrl.favoriteData.small_portion_name}}</span> {{myinfoCtrl.favoriteData.price_large | currency}} <span>{{myinfoCtrl.favoriteData.large_portion_name}}</span></div>
+                </div>
+                <div class="menu-item-description col-sm-7">
+                    <h3 class="menu-item-title">{{myinfoCtrl.favoriteData.name}}</h3>
+                    <p class="menu-item-details">{{myinfoCtrl.favoriteData.description}}</p>
+                </div>
+            </div>
+            <hr class="visible-xs">
+        </div>
+    </div>
+    <div ng-if="myinfoCtrl.error" class="myinfo-error text-center ">
+        <a ui-sref="public.signup">
+            {{myinfoCtrl.error}}
+        </a>
+    </div>
+
+</div>

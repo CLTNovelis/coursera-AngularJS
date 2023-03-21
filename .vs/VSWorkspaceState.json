@@ -1,10 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Lecture37",
-    "\\Lecture37\\css",
-    "\\module3-solution"
+    "\\module5-solution",
+    "\\module5-solution\\src",
+    "\\module5-solution\\src\\common",
+    "\\module5-solution\\src\\public",
+    "\\module5-solution\\src\\public\\myinfo",
+    "\\module5-solution\\src\\public\\signup"
   ],
-  "SelectedNode": "\\module3-solution\\index.html",
+  "SelectedNode": "\\module5-solution\\src\\public\\myinfo\\myinfo.controller.js",
   "PreviewInSolutionExplorer": false
 }
