@@ -51,7 +51,11 @@
             <div class="form-group">
                 <label>Favorite menu item</label>
                 <input class="form-control" type="text" name="favorite" 
-                       ng-model="signupCtrl.user.favorite" >
+                       ng-model="signupCtrl.user.favorite" 
+                       required>
+                <span ng-if="signupForm.favorite.$invalid && signupForm.favorite.$touched">
+                    Please enter your favorite menu item
+                </span>
                 <span ng-if="signupCtrl.user.favoriteAlert" >
                     Sorry, that is not a valid menu item
                 </span>
